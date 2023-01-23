@@ -14,15 +14,18 @@
             <div class="container">
                 <div class="row h-100 w-100">
                     <div class="col-3 d-flex justify-center align-center">
-                        <button @click:indietroImg()>
+                        <button @click="indietroImg(),indietroText()">
                             Indietro
                         </button>
                     </div>
                     <div class="col-6" >
-                        <img v-for="img in slides.image" src="https://picsum.photos/id/0/200/" alt="">
+                        <img  :src="image[activeImage]" alt="">
+                        
+                            <p >{{text[activeText]}}</p>
+                        
                     </div>
                     <div class="col-3 d-flex justify-center align-center">
-                        <button @click:avantiImg()>Avanti</button>
+                        <button @click="avantiImg(),avantiText()">Avanti</button>
                     </div>
                 </div>
            </div>
